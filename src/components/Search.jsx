@@ -203,10 +203,10 @@ function SearchResults({ autocomplete, query, collection }) {
   if (collection.items.length === 0) {
     return (
       <div className="p-6 text-center">
-        <NoResultsIcon className="mx-auto h-5 w-5 stroke-neutral-900 dark:stroke-neutral-600" />
+        <NoResultsIcon className="w-5 h-5 mx-auto stroke-neutral-900 dark:stroke-neutral-600" />
         <p className="mt-2 text-xs text-neutral-700 dark:text-neutral-400">
           Nothing found for{' '}
-          <strong className="break-words font-semibold text-neutral-900 dark:text-white">
+          <strong className="font-semibold break-words text-neutral-900 dark:text-white">
             &lsquo;{query}&rsquo;
           </strong>
           . Please try again.
@@ -238,8 +238,8 @@ const SearchInput = forwardRef(function SearchInput(
   let inputProps = autocomplete.getInputProps({ inputElement: null })
 
   return (
-    <div className="group relative flex h-12">
-      <SearchIcon className="pointer-events-none absolute left-3 top-0 h-full w-5 stroke-neutral-500" />
+    <div className="relative flex h-12 group">
+      <SearchIcon className="absolute top-0 w-5 h-full pointer-events-none left-3 stroke-neutral-500" />
       <input
         ref={inputRef}
         className={clsx(
@@ -266,8 +266,8 @@ const SearchInput = forwardRef(function SearchInput(
         }}
       />
       {autocompleteState.status === 'stalled' && (
-        <div className="absolute inset-y-0 right-3 flex items-center">
-          <LoadingIcon className="h-5 w-5 animate-spin stroke-neutral-200 text-neutral-900 dark:stroke-neutral-800 dark:text-green-400" />
+        <div className="absolute inset-y-0 flex items-center right-3">
+          <LoadingIcon className="w-5 h-5 animate-spin stroke-neutral-200 text-neutral-900 dark:stroke-neutral-800 dark:text-green-400" />
         </div>
       )}
     </div>
@@ -419,10 +419,10 @@ export function Search() {
     <div className="hidden lg:block lg:max-w-md lg:flex-auto">
       <button
         type="button"
-        className="hidden h-8 w-full items-center gap-2 rounded-full bg-white pl-2 pr-3 text-sm text-neutral-500 ring-1 ring-neutral-900/10 transition hover:ring-neutral-900/20 ui-not-focus-visible:outline-none lg:flex dark:bg-white/5 dark:text-neutral-400 dark:ring-inset dark:ring-white/10 dark:hover:ring-white/20"
+        className="items-center hidden w-full h-8 gap-2 pl-2 pr-3 text-sm transition bg-white rounded-md text-neutral-500 ring-1 ring-neutral-900/10 hover:ring-neutral-900/20 ui-not-focus-visible:outline-none lg:flex dark:bg-white/5 dark:text-neutral-400 dark:ring-inset dark:ring-white/10 dark:hover:ring-white/20"
         {...buttonProps}
       >
-        <SearchIcon className="h-5 w-5 stroke-current" />
+        <SearchIcon className="w-5 h-5 stroke-current" />
         Find something...
         <kbd className="ml-auto text-2xs text-neutral-400 dark:text-neutral-500">
           <kbd className="font-sans">{modifierKey}</kbd>
@@ -443,11 +443,11 @@ export function MobileSearch() {
     <div className="contents lg:hidden">
       <button
         type="button"
-        className="flex h-6 w-6 items-center justify-center rounded-md transition hover:bg-neutral-900/5 ui-not-focus-visible:outline-none lg:hidden dark:hover:bg-white/5"
+        className="flex items-center justify-center w-6 h-6 transition rounded-md hover:bg-neutral-900/5 ui-not-focus-visible:outline-none lg:hidden dark:hover:bg-white/5"
         aria-label="Find something..."
         {...buttonProps}
       >
-        <SearchIcon className="h-5 w-5 stroke-neutral-900 dark:stroke-white" />
+        <SearchIcon className="w-5 h-5 stroke-neutral-900 dark:stroke-white" />
       </button>
       <Suspense fallback={null}>
         <SearchDialog className="lg:hidden" {...dialogProps} />
