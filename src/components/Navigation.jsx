@@ -198,7 +198,7 @@ export const navigation = [
       { title: 'Introduction', href: '/' },
       { title: 'Quickstart', href: '/quickstart' },
       { title: 'SDKs', href: '/sdks' },
-
+      { title: 'Test', href: '/sdks' },
     ],
   },
   {

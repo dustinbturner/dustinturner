@@ -21,7 +21,7 @@ function PageLink({ label, page, previous = false }) {
         href={page.href}
         tabIndex={-1}
         aria-hidden="true"
-        className="text-base font-semibold text-neutral-900 transition hover:text-neutral-600 dark:text-white dark:hover:text-neutral-300"
+        className="text-base font-semibold transition text-neutral-900 hover:text-neutral-600 dark:text-white dark:hover:text-neutral-300"
       >
         {page.title}
       </Link>
@@ -53,7 +53,7 @@ function PageNavigation() {
         </div>
       )}
       {nextPage && (
-        <div className="ml-auto flex flex-col items-end gap-3">
+        <div className="flex flex-col items-end gap-3 ml-auto">
           <PageLink label="Next" page={nextPage} />
         </div>
       )}
@@ -61,13 +61,6 @@ function PageNavigation() {
   )
 }
 
-function XIcon(props) {
-  return (
-    <svg viewBox="0 0 20 20" aria-hidden="true" {...props}>
-      <path d="M11.1527 8.92804L16.2525 3H15.044L10.6159 8.14724L7.07919 3H3L8.34821 10.7835L3 17H4.20855L8.88474 11.5643L12.6198 17H16.699L11.1524 8.92804H11.1527ZM9.49748 10.8521L8.95559 10.077L4.644 3.90978H6.50026L9.97976 8.88696L10.5216 9.66202L15.0446 16.1316H13.1883L9.49748 10.8524V10.8521Z" />
-    </svg>
-  )
-}
 
 function GitHubIcon(props) {
   return (
@@ -93,26 +86,20 @@ function SocialLink({ href, icon: Icon, children }) {
   return (
     <Link href={href} className="group">
       <span className="sr-only">{children}</span>
-      <Icon className="h-5 w-5 fill-neutral-700 transition group-hover:fill-neutral-900 dark:group-hover:fill-neutral-500" />
+      <Icon className="w-5 h-5 transition fill-neutral-700 group-hover:fill-neutral-900 dark:group-hover:fill-neutral-500" />
     </Link>
   )
 }
 
 function SmallPrint() {
   return (
-    <div className="flex flex-col items-center justify-between gap-5 border-t border-neutral-900/5 pt-8 sm:flex-row dark:border-white/5">
+    <div className="flex flex-col items-center justify-between gap-5 pt-8 border-t border-neutral-900/5 sm:flex-row dark:border-white/5">
       <p className="text-xs text-neutral-600 dark:text-neutral-400">
         &copy; Copyright {new Date().getFullYear()}. All rights reserved.
       </p>
       <div className="flex gap-4">
-        <SocialLink href="#" icon={XIcon}>
-          Follow us on X
-        </SocialLink>
         <SocialLink href="#" icon={GitHubIcon}>
           Follow us on GitHub
-        </SocialLink>
-        <SocialLink href="#" icon={DiscordIcon}>
-          Join our Discord server
         </SocialLink>
       </div>
     </div>
@@ -121,7 +108,7 @@ function SmallPrint() {
 
 export function Footer() {
   return (
-    <footer className="mx-auto w-full max-w-2xl space-y-10 pb-16 lg:max-w-5xl">
+    <footer className="w-full max-w-2xl pb-16 mx-auto space-y-10 lg:max-w-5xl">
       <PageNavigation />
       <SmallPrint />
     </footer>
