@@ -198,7 +198,7 @@ export const navigation = [
     links: [
       { title: 'About', href: '/about' },
       { title: 'Projects', href: '/projects' },
-      { title: 'Writing', href: '/sdks' },
+      { title: 'Writing', href: '/writing' },
       { title: 'Contact', href: 'mailto:dustin@dustinbturner.com' },
     ],
     collapsed: true,
