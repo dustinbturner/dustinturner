@@ -8,7 +8,7 @@ import { Heading } from '@/components/Heading'
 import { ChatBubbleIcon } from '@/components/icons/ChatBubbleIcon'
 import { EnvelopeIcon } from '@/components/icons/EnvelopeIcon'
 import { UserIcon } from '@/components/icons/UserIcon'
-import { UsersIcon } from '@/components/icons/UsersIcon'
+import { CheckIcon } from '@/components/icons/CheckIcon'
 
 const projects = [
   {
@@ -58,7 +58,7 @@ const projects = [
     name: 'Groups',
     description:
       'Learn about the group model and how to create, retrieve, update, delete, and list groups.',
-    icon: UsersIcon,
+    icon: CheckIcon,
     pattern: {
       y: 22,
       squares: [[0, 1]],
@@ -111,7 +111,7 @@ const projects = [
     name: 'Groups',
     description:
       'Learn about the group model and how to create, retrieve, update, delete, and list groups.',
-    icon: UsersIcon,
+    icon: CheckIcon,
     pattern: {
       y: 22,
       squares: [[0, 1]],

@@ -12,6 +12,7 @@ import { useSectionStore } from '@/components/SectionProvider'
 import { Tag } from '@/components/Tag'
 import { remToPx } from '@/lib/remToPx'
 
+
 function useInitialValue(value, condition = true) {
   let initialValue = useRef(value).current
   return condition ? initialValue : value
@@ -193,25 +194,31 @@ function NavigationGroup({ group, className }) {
 
 export const navigation = [
   {
-    title: 'Guides',
+    title: 'Personal', href: '/',
     links: [
-      { title: 'Introduction', href: '/' },
-      { title: 'Quickstart', href: '/quickstart' },
-      { title: 'SDKs', href: '/sdks' },
-
+      { title: 'About', href: '/about' },
+      { title: 'Projects', href: '/projects' },
+      { title: 'Writing', href: '/sdks' },
+      { title: 'Contact', href: 'mailto:dustin@dustinbturner.com' },
     ],
+    collapsed: true,
   },
   {
     title: 'Resources',
     links: [
-      { title: 'Contacts', href: '/contacts' },
-
+      { title: 'Math', href: '/about' },
+      { title: 'Books', href: '/quickstart' },
+      { title: 'Podcasts', href: '/sdks' },
+      { title: 'Videos', href: '/contacts' },
     ],
+    collapsed: true,
   },
   {
-    title: 'Projects',
+    title: 'Tutorials',
     links: [
-      { title: 'Contacts', href: '/contacts' },    ],
+      { title: 'Contacts', href: '/contacts' },    
+    ],
+    collapsed: true,
   },
 ]
 
